@@ -68,15 +68,16 @@ h2 {
   background-color: var(--col-orng);
   background-image:
     linear-gradient(
-    to top left,
-       rgba(0, 0, 0, 0.2),
-       rgba(0, 0, 0, 0.2) 30%,
-       rgba(0, 0, 0, 0)
-  );
+      to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0)
+    );
   border: 0;
   border-radius: 0.5rem;
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-              inset -2px -2px 3px rgba(0, 0, 0, .6);
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   color: var(--col-gr);
   font-size: 1rem;
   line-height: 2.5;
@@ -89,13 +90,14 @@ h2 {
 }
 
 #add-button:active {
-  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-              inset 2px 2px 3px rgba(0, 0, 0, .6);
+  box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .modal {
-  background-color: rgb(0,0,0);
-  background-color: rgb(0,0,0,0.4);
+  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0, 0.4);
   display: none;
   height: 100%;
   left: 0;
@@ -121,8 +123,9 @@ h2 {
   animation-duration: 0.5s;
   background-color: #fefefe;
   border: 1px solid #888;
-  box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2),
-              0 .375rem 1.25rem 0 rgba(0,0,0,0.4);
+  box-shadow:
+    0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2),
+    0 0.375rem 1.25rem 0 rgba(0, 0, 0, 0.4);
   margin: 15% auto;
   max-width: var(--app-width);
   padding: 1.25rem;
@@ -131,10 +134,11 @@ h2 {
 }
 
 @keyframes slideform {
-  from { 
+  from {
     top: -300px;
     opacity: 0;
   }
+
   to {
     top: 0;
     opacity: 1;
@@ -246,6 +250,6 @@ label[for="pages-input"] {
 
 .attrib {
   color: var(--col-txt);
-  font-size: .5em;
+  font-size: 0.5em;
   text-decoration: none;
 }
