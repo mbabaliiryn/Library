@@ -72,3 +72,46 @@ let iconHTML = {
     myLibrary.forEach((book) => { renderBook(book); });
   }
   
+function addBookToLibrary() {
+  const myLibrary = JSON.parse(localStorage.getItem('myLibrary')) || [];
+  const len = myLibrary.length;
+  const id = (len === 0) ? 0 : myLibrary[len - 1].id + 1;
+  const title = addForm.querySelector('#title-input').value;
+  const author = addForm.querySelector('#author-input').value;
+  const pages = addForm.querySelector('#pages-input').value;
+  const read = Boolean(Number(addForm.querySelector("input[name='read']:checked").value));
+  const book = new Book(id, author, title, pages, read);
+  myLibrary.push(book);
+  localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
+  renderBook(book);
+}
+
+// eslint-disable-next-line no-unused-vars
+addForm.addEventListener('submit', (event) => { addBookToLibrary(); });
+
+bookList.addEventListener('click', event => {
+  const myLibrary = JSON.parse(localStorage.getItem('myLibrary')) || [];
+  const icon = event.target.closest('.icon');
+  if (icon !== null) {
+    const li = icon.closest('li');
+    const bookId = Number(li.querySelector('.book-id').textContent);
+    const index = myLibrary.findIndex((book) => book.id === bookId);
+    if (icon.classList.contains('book-delete')) {
+      bookList.removeChild(li);
+      myLibrary.splice(index, 1);
+    } else if (icon.classList.contains('book-read')) {
+      const bookUnread = li.querySelector('.book-unread');
+      bookUnread.style.display = 'inline';
+      icon.style.display = 'none';
+      myLibrary[index].read = false;
+    } else if (icon.classList.contains('book-unread')) {
+      const bookRead = li.querySelector('.book-read');
+      bookRead.style.display = 'inline';
+      icon.style.display = 'none';
+      myLibrary[index].read = true;
+    }
+    localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
+  }
+});
+
+render();
