@@ -1,0 +1,251 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --app-width: 1000px;
+  --ff: tahoma, verdana, sans-serif;
+  --fw: normal;
+  --col-txt: #444;
+  --col-gr: #eee;
+  --col-bord: #ddd;
+  --col-accent: #9631bf;
+  --col-dark-gray: rgb(92, 88, 88);
+  --col-orng: rgba(226, 97, 11, 0.883);
+  --col-orng-dark: rgb(226, 97, 11);
+  --bs:
+    0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+  --pad-modal: 0.125rem 1rem;
+}
+
+body {
+  color: var(--txt-col);
+  font-family: var(--ff);
+  letter-spacing: 1px;
+}
+
+h1,
+h2 {
+  font-weight: var(--fw);
+}
+
+#app-wrapper {
+  border-radius: 6px;
+  box-shadow: var(--bs);
+  margin: 2rem auto;
+  max-width: var(--app-width);
+  overflow: hidden;
+  padding: 0 0 1.5em;
+  width: 90%;
+}
+
+#banner {
+  background-color: var(--col-gr);
+  padding: 0.75em 0;
+}
+
+#list-bar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+#banner h1,
+#banner p {
+  margin: 0.75em 0;
+  text-align: center;
+  width: 100%;
+}
+
+#list {
+  margin: 1.75em;
+}
+
+#add-button {
+  background-color: var(--col-orng);
+  background-image:
+    linear-gradient(
+    to top left,
+       rgba(0, 0, 0, 0.2),
+       rgba(0, 0, 0, 0.2) 30%,
+       rgba(0, 0, 0, 0)
+  );
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
+  color: var(--col-gr);
+  font-size: 1rem;
+  line-height: 2.5;
+  padding: 0 1.5rem;
+  text-shadow: 1px 1px 1px #111;
+}
+
+#add-button:hover {
+  background-color: var(--col-orng-dark);
+}
+
+#add-button:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+              inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.modal {
+  background-color: rgb(0,0,0);
+  background-color: rgb(0,0,0,0.4);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal-header {
+  background-color: var(--col-orng);
+  color: var(--col-gr);
+  padding: var(--pad-modal);
+}
+
+.modal-body {
+  padding: var(--pad-modal);
+}
+
+.modal-content {
+  animation-name: slideform;
+  animation-duration: 0.5s;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2),
+              0 .375rem 1.25rem 0 rgba(0,0,0,0.4);
+  margin: 15% auto;
+  max-width: var(--app-width);
+  padding: 1.25rem;
+  position: relative;
+  width: 80%;
+}
+
+@keyframes slideform {
+  from { 
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 1.75em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#add-form {
+  margin: 0 auto;
+  padding: 1em;
+  width: 500px;
+}
+
+#add-form div + div {
+  margin-top: 1em;
+}
+
+label[for="title-input"],
+label[for="author-input"],
+label[for="pages-input"] {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+#title-input,
+#author-input,
+#pages-input {
+  font: 1em sans-serif;
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+#title-input:focus,
+#author-input:focus,
+#pages-input:focus {
+  border-color: black;
+}
+
+#add-form .radio-group {
+  margin-left: 90px;
+}
+
+#add-form input[type="submit"] {
+  margin-left: 96px;
+}
+
+#list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.75em;
+  border-left: 5px solid var(--col-bord);
+  margin: 1.75em 0.8em;
+}
+
+#list li:hover {
+  border-color: var(--col-accent);
+}
+
+.book-details,
+.book-edit {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.book-pages {
+  color: var(--col-txt);
+  font-size: 0.75rem;
+}
+
+.book-author {
+  color: var(--col-dark-gray);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.book-read,
+.book-delete {
+  cursor: pointer;
+}
+
+.book-delete {
+  margin-top: 1em;
+}
+
+.attrib {
+  color: var(--col-txt);
+  font-size: .5em;
+  text-decoration: none;
+}
