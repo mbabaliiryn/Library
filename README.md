@@ -1,7 +1,7 @@
 ## Library
 The book library assigment allows user to create and delete books.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./images/library.png)
 
 The book library assigment allows user to create books with the pages and mark them as read or unread, the assignment also allows user to delete the books.
 
@@ -12,7 +12,7 @@ The book library assigment allows user to create books with the pages and mark t
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://mbabaliiryn.github.io/Library/)
 
 
 ## Getting Started
