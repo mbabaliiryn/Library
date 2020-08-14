@@ -16,7 +16,7 @@ function Book(id, author, title, pages, read = false) {
 }
 
 
-let iconHTML = {
+const iconHTML = {
   read: '<i class="fi-cnsuxl-check" style="color: green;"></i>',
   unread: '<i class="fi-cnluxl-check"></i>',
   delete: '<i class="fi-xnluxl-trash-bin"></i>',
