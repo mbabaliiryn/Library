@@ -15,7 +15,7 @@ function Book(id, author, title, pages, read = false) {
   this.read = read;
 }
 
-// eslint-disable-next-line prefer-const
+
 let iconHTML = {
   read: '<i class="fi-cnsuxl-check" style="color: green;"></i>',
   unread: '<i class="fi-cnluxl-check"></i>',
