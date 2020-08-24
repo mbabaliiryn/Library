@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="./style.css" rel="stylesheet" />
+  <script defer src="https://friconix.com/cdn/friconix.js"> </script>
+  <title>Library App</title>
+</head>
+
+<body>
+  <div id="app-wrapper">
+    <header>
+      <div id="banner">
+        <h1 class="title">Books Library!</h1>
+        <p>This app lists all the books I'm interested in. It keeps track of information specific to each book.</p>
+      </div>
+      <div id="list">
+        <div id="list-bar">
+          <h2 class="title">Books being tracked</h2>
+          <button id="add-button">New Book</button>
+          <div id="form-box" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Enter Book Details</h2>
+              </div>
+              <div class="modal-body">
+                <form id="add-form">
+                  <div>
+                    <label for="title-input">Title</label>
+                    <input type="text" id="title-input" name="title">
+                  </div>
+                  <div>
+                    <label for="author-input">Author</label>
+                    <input type="text" id="author-input" name="author">
+                  </div>
+                  <div>
+                    <label for="pages-input">Pages</label>
+                    <input type="number" id="pages-input" name="pages">
+                  </div>
+                  <div class="radio-group">
+                    <input type="radio" id="unread-input" name="read" value="0" checked>
+                    <label for="unread-input">Unread</label>
+                    <input type="radio" id="read-input" name="read" value="1">
+                    <label for="read-input">Read</label>
+                  </div>
+                  <div>
+                    <input type="submit" value="Add Book">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul>
+        </ul>
+      </div>
+    </header>
+  </div>
+  <a class="attrib" href="https://friconix.com/">Icons from Friconix</a>
+  <script src="./app.js"></script>
+</body>
+
+</html>
